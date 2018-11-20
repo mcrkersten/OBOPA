@@ -14,16 +14,19 @@ class Module {
 		void addDocent(Docent* d);
 		void addStudent(Student* d);
 
-		//return naam of hoeveelheid EC van module
+		//return of set naam of hoeveelheid EC van module
 		std::string getName();
 		int getEC();
 		void setEC(int ec);
+
+		//Haal totaal EC van student op
+		bool getStudentName(Student* d);
 
 		//genereer een lijst
 		void list();
 
 		//verwijder student
-		void expelStudent();
+		void expelStudent(Student* s);
 
 	private:
 		std::string naam;

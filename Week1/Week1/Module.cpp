@@ -45,12 +45,26 @@ void Module::addDocent(Docent* d) {
 	docenten.push_back(d);
 }
 
-void Module::expelStudent() {
+//Kijk of deze student mee doet aan deze module door zijn naam te vergelijken.
+bool Module::getStudentName(Student* d) {
 	std::vector<Student*>::iterator it = studenten.begin();
 	while (it != studenten.end()) {
-		if ((*it)->getName() == "John") {
-			std::cout << "Geschorst: " << (*it)->getName() << std::endl;
-			delete *it;
+		if ((*it)->getName() == d->getName()) {
+			return true;
+		}
+		else {
+			it++;
+		}
+	}
+	return false;
+}
+
+//Verwijderd een student uit een module. Loopt door alle namen en als er een gelijk is met "s", wissen uit de vector.
+void Module::expelStudent(Student* s) {
+	std::vector<Student*>::iterator it = studenten.begin();
+	while (it != studenten.end()) {
+		if ((*it)->getName() == s->getName()) {
+			std::cout << "Geschorst: " << (*it)->getName() << " | Module: " << getName() << std::endl;
 			it = studenten.erase(it);
 		}
 		else {
@@ -60,14 +74,5 @@ void Module::expelStudent() {
 }
 
 Module::~Module() {
-	std::vector<Student*>::iterator it1 = studenten.begin();
-	while (it1 != studenten.end()) {
-		delete *it1;
-		it1++;
-	}
-	std::vector<Docent*>::iterator it2 = docenten.begin();
-	while (it2 != docenten.end()) {
-		delete *it2;
-		it2++;
-	}
+	//The peoplemaker deletes the vector pointers
 }

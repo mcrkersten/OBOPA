@@ -27,7 +27,7 @@
     <ClCompile Include="Docent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PeopleMaker.cpp">
+    <ClCompile Include="PeopleManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,7 +41,7 @@
     <ClInclude Include="Docent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PeopleMaker.h">
+    <ClInclude Include="PeopleManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
